@@ -5,4 +5,4 @@ app.get('/', (req, res) => {
     res.send('Hello Express')
 });
 
-app.listen(3000, () => console.log("Server is up and running"))
+app.listen(process.env.PORT || 5000   )
