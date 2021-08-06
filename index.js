@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require ('cors');
 const Client = require ('pg').Client;
@@ -40,7 +41,6 @@ app.get("/hola" , (req, res) => {
     .catch((err)  => res.json(err))
 })
 
-process.env.PORT = 3000;
-app.listen(process.env.PORT || 5000, () => {
-    console.log("Listening on PORT " + process.env.PORT || 3000)}
-)
+app.listen(process.env.PORT, () => 
+    console.log("Listening on PORT " + process.env.PORT )
+);
