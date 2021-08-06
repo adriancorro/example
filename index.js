@@ -8,6 +8,13 @@ const { json } = require('express');
 
 let db;
 
+db = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+})
+
 if(process.env.NODE.ENV){
     db = new Client({
         connectionString: process.env.DATABASE_URL,
