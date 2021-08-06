@@ -32,7 +32,9 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello Express heroku main')
+    db.query(`SELECT * from customers`)
+    .then((table) => res.json ({data: table.rows}))
+    .catch((err)  => res.json(err))
 });
 
 app.get("/hola" , (req, res) => {
