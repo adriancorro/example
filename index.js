@@ -1,14 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require ('cors');
-const Client = require ('pg').Client;
+const Client = require ("pg").Client;
 const { json } = require('express');
 
 
 
 let db;
 
-if(process.env.NODE.ENV === "production"){
+if(process.env.NODE.ENV){
     db = new Client({
         connectionString: process.env.DATABASE_URL,
         ssl: {
