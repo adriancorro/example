@@ -15,7 +15,7 @@ db = new Client({
     },
 })
 
-if(process.env.NODE.ENV){
+/* if(process.env.NODE.ENV){
     db = new Client({
         connectionString: process.env.DATABASE_URL,
         ssl: {
@@ -30,7 +30,7 @@ if(process.env.NODE.ENV){
         password: 'admin',
         port: 5432
     });
-}
+} */
 
 db.connect();
 const app = express();
